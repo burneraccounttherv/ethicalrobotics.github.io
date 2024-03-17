@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_7" data-name="Layer 7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 444.74 562.02">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <path class="cls-1" d="m180.54,478.7h17.07l.02,28.15,21.11-18.6s1.51-1.51,3.02-.5,1.01,3.02,1.01,3.02l.08,16.08,21.03-18.09s1.01-1.51,2.51-1.51,2.01,1.51,2.01,2.01v17.59l21.11-18.6s2.01-1.51,3.02-1.01,1.01,1.51,1.01,4.52v62.88s1.01,5.98-9.55,5.98h-77.38s-6.05-.74-6.05-7.16v-74.77Z"/>
+    <path class="cls-1" d="m180.54,473.06h17.07v-5.64s-.48-2.8-7.01-2.8-10.05.11-10.05,3.32v5.11Z"/>
+    <rect class="cls-1" x="189.08" y="523.94" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="206.17" y="523.94" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="222.76" y="523.94" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="239.85" y="523.94" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="256.94" y="523.94" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="189.08" y="540.52" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="206.17" y="540.52" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="222.76" y="540.52" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="239.85" y="540.52" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+    <rect class="cls-1" x="256.94" y="540.52" width="8.54" height="8.54" rx="2.74" ry="2.74"/>
+  </g>
+  <g id="Layer_5" data-name="Layer 5">
+    <path class="cls-1" d="m193.57,99.31h68.93v-23.2s-5.35-19.65-19.86-19.65h-32.48s-18.66,7.6-18.66,20.04v22.81h2.07Z"/>
+    <path class="cls-1" d="m219.95,56.95s-3.06,10.87,7.05,10.87,7.38-10.87,7.38-10.87"/>
+    <polyline class="cls-1" points="222.98 66.98 217.76 88.25 227 99.31 237.11 88.25 231.03 66.98"/>
+    <ellipse class="cls-1" cx="227.09" cy="26.74" rx="19" ry="22.11"/>
+  </g>
+  <g id="Layer_6" data-name="Layer 6">
+    <path class="cls-2" d="m30.18,341.66l-27.09,29.22s-4.18,4.3.98,9.46,10.75,0,10.75,0l28.25-27.72s8.7,3.22,17.08-1.93,9.35-17.08,7.73-22.24l-12.57,11.28-10.31-10.31,11.28-12.25s-10.96-4.51-20.3,4.19-4.51,16.44-5.8,20.3Z"/>
+    <rect x="301" y="517.13" width="113" height="14"/>
+    <rect x="397" y="419.13" width="17" height="112"/>
+    <polygon points="405.67 392.3 382.5 419.13 428.84 419.13 405.67 392.3"/>
+    <rect x="397.5" y="62.63" width="17" height="253"/>
+    <rect x="350.6" y="15.8" width="17" height="111.22" transform="translate(287.69 430.52) rotate(-90)"/>
+    <polygon points="284.67 71.15 311.5 94.32 311.5 47.98 284.67 71.15"/>
+    <rect x="39.5" y="77.63" width="17" height="213"/>
+    <rect x="98" y="4.13" width="17" height="134" transform="translate(177.63 -35.37) rotate(90)"/>
+    <polygon points="47.54 304.46 70.71 277.63 24.37 277.63 47.54 304.46"/>
+    <rect x="90.41" y="467.78" width="17" height="112.82" transform="translate(-425.29 623.1) rotate(-90)"/>
+    <rect x="34.5" y="398.63" width="17" height="134"/>
+    <polygon points="169.15 524.65 142.32 501.48 142.32 547.82 169.15 524.65"/>
+  </g>
+  <g id="Layer_4" data-name="Layer 4">
+    <rect class="cls-1" x="371.5" y="333.63" width="71" height="32"/>
+    <path class="cls-1" d="m378.5,345.63s4-1,5-5h47.43s1.35,5,4.96,5v8s-4.39,2-4.39,5h-48.83s-.17-4-4.17-4v-9Z"/>
+    <circle class="cls-1" cx="392.5" cy="349.63" r="2"/>
+    <circle class="cls-1" cx="422.5" cy="349.63" r="2"/>
+    <circle class="cls-1" cx="407.31" cy="349.97" r="4.66"/>
+    <polyline class="cls-1" points="364.74 340.63 364.74 372.28 435.89 372.28"/>
+    <polyline class="cls-1" points="357.5 347.63 357.5 378.63 429.3 378.63"/>
+  </g>
+</svg>
