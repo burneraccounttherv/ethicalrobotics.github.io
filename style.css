@@ -123,6 +123,7 @@ html, body {
   border-style: solid;
   border-color: black;
   border-width: 0.1vw;
+  border-radius: 0.5rem;
 }
 
 #good {
@@ -137,9 +138,20 @@ html, body {
 }
 
 #good_scannable {
-  height: 80vh;
+  height: 70vh;
   width: 37vw;
   margin: 0;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  padding-left: 1.5vw;
+}
+
+#good_scannable li {
+  font-size: 3vh;
+  margin-top: 5vh;
+  color: black;
+  opacity: 0;
+  transition: opacity 1s ease, margin-top 1s ease;
 }
 
 #bad {
@@ -169,6 +181,7 @@ html, body {
   opacity: 0;
   right: 0;
   margin-right: 2.5vw;
+  border-radius: 0.5rem;
 }
 
 #bad_scannable {
@@ -182,8 +195,10 @@ html, body {
 
 #bad_scannable li {
   font-size: 3vh;
-  margin-top: 1.5vh;
-  color: white; 
+  margin-top: 8vh;
+  color: white;
+  opacity: 0;
+  transition: opacity 1s ease, margin-top 1s ease;
 }
 
 #article_content {
@@ -198,14 +213,19 @@ html, body {
   transition: margin-top 1s ease, opacity 1s ease;
 }
 
-#conclusion {
+#article_window {
+  position: absolute;
+  border-radius: 0.5rem;
+  height: 80vh;
+  margin-top: 2vh;
+  margin-left: 27.5vw;
+  width: 45vw;
+  overflow-y: scroll
 }
 
-#conclusion h1 {
-  margin-top: 5%;
-  margin-left: 2%;
-  opacity: 0;
-  font-size: 8vh;
-  color: black;
-  transition: margin-top 1s ease, opacity 1s ease;
+.article_section {
+  width: 39vw;
+  margin-left: 3vw;
+  font-size: 3vh;
+  margin-top: 8vh;
 }

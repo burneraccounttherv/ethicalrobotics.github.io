@@ -1,8 +1,9 @@
 let netScroll = 0;
 let activated = false;
 let bulletActivated = [false, false];
-let articleActivated = [false];
+let articleActivated = [false, false];
 let conclusionActivated = [false];
+let articleSectionVisible = 1;
 
 const sleep = ms => new Promise(r => setTimeout(r,ms));
 
@@ -11,6 +12,9 @@ function main() {
   getNetScroll();
   scrollBehavior();
   scrollSectionAnimations();
+  document.addEventListener("DOMContentLoaded", function() {
+    articleFunctionality();
+  });
 }
 
 function scrollSectionAnimations() {
@@ -18,7 +22,6 @@ function scrollSectionAnimations() {
     loadingAnimation();
     scannableAnimation();
     articleAnimation();
-    conclusionAnimation();
   });
 }
 
@@ -40,7 +43,7 @@ async function scannableAnimation() {
   const bad_info = document.getElementById("bad_info");
   const bad_title = document.getElementById("bad");
 
-  if(isVisible(scan_title, 10) && !bulletActivated[0]) {
+  if(isVisible(scan_title, 50) && !bulletActivated[0]) {
     scan_title.style.marginTop = "2%";
     scan_title.style.opacity = 1;
     bulletActivated[0] = true;
@@ -56,40 +59,50 @@ async function scannableAnimation() {
       good_title.style.marginLeft = 0;
       bad_title.style.opacity = 1;
       bad_title.style.marginLeft = 0;
+      scannable_anim(false, document.getElementById("bad_scannable").childElementCount, 1);
+      scannable_anim(true, document.getElementById("good_scannable").childElementCount, 1);
     }, 800);
-    await setTimeout(function() {
-      scannable_anim(false, 2, 1);
-    }, 1600);
     bulletActivated[1] = true;
   }
 }
 
-function scannable_anim(good_scan, max_pts, curr_pt) {
+async function scannable_anim(good_scan, max_pts, curr_pt) {
+  if(curr_pt === 1) {
+    await sleep(770);
+  }
   if(curr_pt <= max_pts) {
-    const c_p = (good_scan) ? document.querySelector("#good_scan li:nth-child(" + curr_pt + ")") :
-                              document.querySelector("#bad_scan li:nth-child(" + curr_pt + ")"); 
+    let c_p;
+
+    if(good_scan) {
+      c_p = document.getElementById("goodbp" + curr_pt);
+    }
+    else {
+      c_p = document.getElementById("badbp" + curr_pt);
+    }
+
+    c_p.style.marginTop = "3vh";
+    c_p.style.opacity = 1;
+    await sleep(150);
+    return scannable_anim(good_scan, max_pts, curr_pt + 1);
   }
 }
 
 function articleAnimation() {
   const art_title = document.getElementById("article_title");
+  const article_window = document.getElementById("article_window");
 
-  if(isVisible(art_title, 10) && !articleActivated[0]) {
+  if(isVisible(art_title, 50) && !articleActivated[0]) {
     art_title.style.marginTop = "3%";
     art_title.style.opacity = 1;
     articleActivated[0] = true;
   }
-}
 
-function conclusionAnimation() {
-  const conc_title = document.getElementById("conc_title");
-
-  if(isVisible(conc_title, 10) && !conclusionActivated[0]) {
-    conc_title.style.marginTop = "3%";
-    conc_title.style.opacity = 1;
-    conclusionActivated[0] = true;
+  if(isVisible(article_window, 50) && !articleActivated[1]) {
+    getNewSection(0);
+    articleActivated[1] = true;
   }
 }
+
 
 function loadingAnimation() {
   if(netScroll > 1.1 && !activated) {
@@ -107,10 +120,19 @@ function animateVideos() {
 
 function getNetScroll() {
   document.addEventListener("wheel", function(event) {
-    const height_measure = $("#landing_page").height();
-    netScroll += (event.deltaY/height_measure);
-    netScroll = (netScroll < 0) ? 0 : netScroll;
-    netScroll = (netScroll > $(document).height()/height_measure) ? $(document).height()/height_measure : netScroll;
+    if($("#article_window:hover").length === 0) {
+      const height_measure = $("#landing_page").height();
+      netScroll += (event.deltaY/height_measure);
+      netScroll = (netScroll < 0) ? 0 : netScroll;
+      netScroll = (netScroll > $(document).height()/height_measure) ? $(document).height()/height_measure : netScroll;
+      if(netScroll === 0) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }
   });
 }
 
@@ -127,6 +149,7 @@ function scrollBehavior() {
     }
   });
 }
+
 
 window.onbeforeunload = function() {
   window.scrollTo({
