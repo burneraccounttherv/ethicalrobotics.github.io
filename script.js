@@ -89,16 +89,18 @@ async function scannable_anim(good_scan, max_pts, curr_pt) {
 
 function articleAnimation() {
   const art_title = document.getElementById("article_title");
-  const article_window = document.getElementById("article_window");
-
+  const image_holder = document.getElementById("images_holder");
   if(isVisible(art_title, 50) && !articleActivated[0]) {
     art_title.style.marginTop = "3%";
     art_title.style.opacity = 1;
     articleActivated[0] = true;
   }
 
-  if(isVisible(article_window, 50) && !articleActivated[1]) {
-    getNewSection(0);
+  if(isVisible(image_holder, 60) && !articleActivated[1]) {
+    const first_el = document.getElementById("img_1");
+    first_el.style.marginTop = 0;
+    first_el.style.opacity = 1;
+    first_el.classList.add("active_img");
     articleActivated[1] = true;
   }
 }
@@ -150,6 +152,60 @@ function scrollBehavior() {
   });
 }
 
+function articleFunctionality() {
+  for(let i = 1; i <= 4; i++) {
+    const sec = document.getElementById("sec_" + i);
+    let heightDiff = document.getElementById("article_window").getBoundingClientRect().height - sec.getBoundingClientRect().height;
+    heightDiff /= 2;
+    sec.style.marginTop = heightDiff + "px";
+    sec.style.marginBottom = heightDiff + "px";
+  }
+
+  document.getElementById("article_window").addEventListener("scroll", function() {
+    const e1 = document.getElementById("sec_1");
+    const e2 = document.getElementById("sec_2");
+    const e3 = document.getElementById("sec_3");
+    const e4 = document.getElementById("sec_4");
+
+    if(isVisible(e1, 80)) {
+      displayImg(1);
+    }
+    else if(isVisible(e2, 80)) {
+      displayImg(2);
+    }
+    else if(isVisible(e3, 80)) {
+      displayImg(3);
+    }
+    else if(isVisible(e4, 80)) {
+      displayImg(4);
+    }
+  });
+
+  document.querySelectorAll(".images").forEach((el) => {
+    const image_holder = document.getElementById("images_holder");
+
+    let widthDiff = image_holder.getBoundingClientRect().width - el.getBoundingClientRect().width;
+    widthDiff /= 2;
+
+    el.style.marginLeft = widthDiff + "px";
+  });
+}
+
+function displayImg(imgNumToDisplay) {
+  const remove = document.querySelector(".active_img");
+
+  remove.style.marginTop = "40vh";
+  remove.style.opacity = 0;
+
+  remove.classList.remove("active_img");
+
+  const display = document.getElementById("img_" + imgNumToDisplay);
+
+  display.style.marginTop = 0;
+  display.style.opacity = 1;
+
+  display.classList.add("active_img");
+}
 
 window.onbeforeunload = function() {
   window.scrollTo({

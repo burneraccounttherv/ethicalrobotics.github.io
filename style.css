@@ -28,10 +28,6 @@ html, body {
   margin-bottom: 0;
 }
 
-.stat img {
-  height: 100%;
-}
-
 .stat {
   height: 100%;
   width: 32%;
@@ -41,29 +37,14 @@ html, body {
   margin-top: 0;
 }
 
-.stat h1 {
-  width: 100%;
-  text-align: center;
-  height: 40%;
-  font-size: 15vh;
-  margin-bottom: 0;
-}
-
-.stat h2 {
-  width: 100%;
-  text-align: center;
-  font-size: 3vh;
-  margin-top: -1%;
-}
-
 .identical_title {
   position: absolute;
   text-align: left;
   height: fit-content;
   width: 40vw;
-  top: 20vh;
+  top: 12vh;
   left: 5vw;
-  font-size: 10vh;
+  font-size: 9vh;
 }
 
 #unique_title {
@@ -72,7 +53,7 @@ html, body {
   width: 40vw;
   font-size: 7vh;
   left: 5vw;
-  top: 55vh;
+  top: 62vh;
   z-index: 10;
 }
 
@@ -217,15 +198,38 @@ html, body {
   position: absolute;
   border-radius: 0.5rem;
   height: 80vh;
-  margin-top: 2vh;
-  margin-left: 27.5vw;
+  margin-top: -5vh;
+  margin-left: 3vw;
   width: 45vw;
-  overflow-y: scroll
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .article_section {
   width: 39vw;
   margin-left: 3vw;
   font-size: 3vh;
-  margin-top: 8vh;
+  scroll-snap-align: center;
+}
+
+.article_section a {
+  color: black;
+}
+
+#images_holder {
+  height: 40vh;
+  width: 35vw;
+  position: absolute;
+  margin-left: 55vw;
+  margin-top: 15vh;
+  z-index: 1;
+  overflow-y: hidden;
+}
+
+.images {
+  position: absolute;
+  margin-top: 40vh;
+  opacity: 0;
+  height: 100%;
+  transition: opacity 1.5s ease-out, margin-top 1s ease;
 }
